@@ -1,0 +1,60 @@
+:root{
+	--c0: #484848;
+	--c1: #7b7b7b;
+	--c2: #5e5e5e;
+	--c3: #a3a3a3;
+	--c9: #c1c1c1;
+}
+
+@font-face{font-family: FontComfortaa; src: url('/static/fonts/Comfortaa.ttf');}
+@font-face{font-family: FontBellefair; src: url('/static/fonts/Bellefair.ttf');}
+
+html{min-width: 440px; scroll-behavior: smooth; background-color: var(--c1);}
+body{
+	font-family: FontComfortaa; cursor: default;
+	background: var(--c1); color: #FFF;
+}
+body::-webkit-scrollbar {display: none;}
+*{box-sizing: border-box; outline: none; font: inherit;}
+
+
+.wrapper{margin-left: 10px; margin-right: 10px; display: flex;}
+.wrapper-body{margin-left: 10px; margin-right: 10px;}
+@media (min-width: 768px) {
+	.wrapper{margin-left: 6%; margin-right: 6%;}
+	.wrapper-body{margin-left: 6%; margin-right: 6%;}
+}
+@media (min-width: 992px) {
+	.wrapper{margin-left: 8%; margin-right: 8%;}
+	.wrapper-body{margin-left: 6%; margin-right: 6%;}
+}
+@media (min-width: 1200px) {
+	.wrapper{margin-left: 12%; margin-right: 12%;}
+	.wrapper-body{margin-left: 12%; margin-right: 12%;}
+}
+.normal-text{font-size: 14px; line-height: 20px;}
+.vertical-space{height: 20px;}
+
+.header-bar{background-color: var(--c2);}
+.logo-holder{justify-content: center;}
+.logo-large{padding: 16px 20px 0px 20px; font-size: 50px; line-height: 50px;}
+.logo-small{padding: 0px 20px 16px 20px; font-size: 20px; line-height: 20px;}
+.logo-text{text-decoration: none; color: #FFF; font-family: FontBellefair;}
+
+.flex-vert{display: flex; flex-direction: column;}
+.flex-hori{display: flex; flex-direction: row;}
+.mid-holder{justify-content: center;}
+
+.button-group{width: 100%; justify-content: center; flex-wrap: wrap;}
+.input-field-holder{width: 50%; padding: 10px;}
+.input-field-header{line-height: 30px; font-size: 20px;}
+.input-field{line-height: 20px; border-radius: 6px; padding: 10px; width: 100%;}
+
+.main-button{background-color: var(--c3); border: none; padding: 12px 32px; font-size: 24px;
+	color: #FFF; border-radius: 8px; transition: 0.4s; margin: 6px 8px;}
+.main-button:hover{background-color: var(--c9);}
+
+.return-msg-box{
+	height: 100%; padding: 20px; border-radius: 6px; background-color: var(--c2);
+}
+.return-msg{line-height: 30px; font-size: 20px;}

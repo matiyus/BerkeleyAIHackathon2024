@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OSME</title>
+    <link rel="stylesheet" href="/static/reset.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header-bar flex-hori">
+        <div class="wrapper">
+            <a class="logo-text" href="{{ url_for('initial_launch') }}">
+                <div class="logo-holder">
+                    <div class="logo-large">
+                        OSME
+                    </div>
+                    <div class="logo-small">
+                        Online Shopping Made Easy
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="vertical-space"></div>
+
+    <div class="main-body" id="main-body">
+        <div class="wrapper flex-vert" id="content-to-disable">
+            <form class="flex-vert" method="post">
+                <div class="button-group flex-hori">
+                    <div class="input-field-holder">
+                        <p class="input-field-header">User Chest</p>
+                        <input class="input-field" type="number" step="0.1" min="0"
+                        name="user_chest" placeholder="Enter Chest Size (inch)"
+                        value="{{ form_data.user_chest if form_data.user_chest is not none else '' }}">
+                    </div>
+                    <div class="input-field-holder">
+                        <p class="input-field-header">User Length</p>
+                        <input class="input-field" type="number" step="0.1" min="0"
+                        name="user_length" placeholder="Enter Length (inch)"
+                        value="{{ form_data.user_length if form_data.user_length is not none else '' }}">
+                    </div>
+                    <div class="input-field-holder">
+                        <p class="input-field-header">Cloth Chest</p>
+                        <input class="input-field" type="number" step="0.1" min="0"
+                        name="cloth_chest" placeholder="Enter Cloth Chest Size (inch)"
+                        value="{{ form_data.cloth_chest if form_data.cloth_chest is not none else '' }}">
+                    </div>
+                    <div class="input-field-holder">
+                        <p class="input-field-header">Cloth Length</p>
+                        <input class="input-field" type="number" step="0.1" min="0"
+                        name="cloth_length" placeholder="Enter Cloth Length (inch)"
+                        value="{{ form_data.cloth_length if form_data.cloth_length is not none else '' }}">
+                    </div>
+                </div>
+                <br>
+                <div class="mid-holder flex-hori">
+                    <button class="main-button appear-animation" style="animation-delay: 0.2s;"
+                        type="submit">Check</button>
+                </div>
+            </form>
+
+            <div class="vertical-space"></div>
+
+            <div class="return-msg-box">
+                <p class="return-msg">{{ message }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
