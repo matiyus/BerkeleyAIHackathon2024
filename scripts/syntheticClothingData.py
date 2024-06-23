@@ -18,10 +18,12 @@ reflective_elements = ['Yes', 'No']
 pockets_options = [0, 1, 2, 3]
 waistband_types = ['Elastic', 'Drawstring']
 fit_styles = ['Slim', 'Regular', 'Relaxed']
+brand_name = ['Nike','Adidas']
 
 # Generate random data for clothing items
-num_clothing_items = 500
+num_clothing_items = 1000
 clothing_data = {
+
     'clothing_id': np.arange(1, num_clothing_items + 1),
     'clothing_type': np.random.choice(clothing_types, num_clothing_items),
     'size': np.random.choice(sizes, num_clothing_items),
@@ -42,7 +44,8 @@ clothing_data = {
     'pockets': np.random.choice(pockets_options, num_clothing_items),
     'inseam_length': np.random.randint(0, 10, num_clothing_items),  # Example inseam lengths
     'waistband_type': np.random.choice(waistband_types, num_clothing_items),
-    'fit_style': np.random.choice(fit_styles, num_clothing_items)
+    'fit_style': np.random.choice(fit_styles, num_clothing_items),
+    'brand_name': np.random.choice(brand_name, num_clothing_items)
 }
 
 # Adjusting dimensions to be 0 where not applicable (e.g., chest for leggings)
