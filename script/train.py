@@ -2,11 +2,13 @@ import pandas as pd
 import numpy as np
 import time
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import ExtraTreesClassifier
+import matplotlib.pyplot as plt
+from sklearn import metrics
 
 class OSMEModel:
     data: pd.DataFrame = None
-    model_forest: RandomForestClassifier = RandomForestClassifier()
+    model_forest: ExtraTreesClassifier = ExtraTreesClassifier()
 
     def __init__(self) -> None:
         pass
@@ -28,6 +30,12 @@ class OSMEModel:
         output_prediction = self.model_forest.predict(input_test)
         accuracy = np.mean(output_test == output_prediction)
         print(f"Expected Accuracy: {accuracy*100}%")
+
+        disp = metrics.ConfusionMatrixDisplay.from_predictions(output_test, output_prediction)
+        disp.figure_.suptitle("Confusion Matrix")
+        print(f"Confusion matrix:\n{disp.confusion_matrix}")
+
+        plt.show()
     
     def predict(self, user_chest: float, user_length: float, cloth_chest: float, cloth_length: float) -> float:
         input_data = np.array([[user_chest, user_length, cloth_chest, cloth_length]])
